@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fernando Bermudo | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Fernando Bermudo, Computing Science graduate focusing on IT Support, infrastructure, and software engineering projects." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0f172a;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius: 18px;
+      --shadow: 0 14px 45px rgba(15,23,42,0.6);
+      --max-width: 1100px;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, -system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: radial-gradient(circle at top, #111827 0, #020817 60%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom,
+        rgba(2,6,23,0.92),
+        rgba(2,6,23,0.6));
+      border-bottom: 1px solid rgba(148,163,253,0.08);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: all 0.18s ease;
+      color: var(--muted);
+    }
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1.3fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero-title span {
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .hero-text {
+      font-size: 14px;
+      color: var(--text);
+      max-width: 620px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 0;
+    }
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(148,163,253,0.25);
+      color: var(--muted);
+      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,0.7);
+    }
+
+    .hero-card {
+      padding: 18px 16px;
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent),
+                  rgba(9,9,20,0.98);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(148,163,253,0.24);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 12px;
+    }
+    .hero-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .pill-link {
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(56,189,248,0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: var(--accent);
+    }
+    .pill-link span.icon {
+      font-size: 12px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      margin: 0;
+    }
+    h2 span.label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 14px 12px;
+      border-radius: var(--radius);
+      background: rgba(9,9,20,0.98);
+      border: 1px solid rgba(75,85,99,0.6);
+      box-shadow: 0 10px 35px rgba(15,23,42,0.5);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .card strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .card ul {
+      padding-left: 16px;
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .skills-list span {
+      padding: 5px 8px;
+      border-radius: 8px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(75,85,99,0.7);
+    }
+
+    .contact {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px 24px;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      footer {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">Fernando <span>Bermudo</span></div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div>
+      <div class="hero-title">
+        IT & Software Engineer<br><span>Portfolio</span>
+      </div>
+      <div class="hero-subtitle">
+        Computing Science graduate | IT Support & Full-Stack Projects | Based in Ireland
+      </div>
+      <p class="hero-text">
+        I enjoy solving real problems with technology: from building production-like
+        full-stack applications to supporting users, debugging systems, and improving
+        workflows. I am focusing my career on IT Support, infrastructure, and backend
+        development roles where I can be hands-on, learn fast, and contribute from day one.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">IT Support & Helpdesk</span>
+        <span class="tag">Java & Spring Boot</span>
+        <span class="tag">React & Web Development</span>
+        <span class="tag">MySQL & MongoDB</span>
+        <span class="tag">Problem Solving</span>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-label">Links & Profiles</div>
+      <div class="links-row">
+        <a class="pill-link" href="https://github.com/Granades" target="_blank">
+          <span class="icon">★</span><span>GitHub</span>
+        </a>
+        <!-- Add LinkedIn or others when ready -->
+      </div>
+      <div>
+        <div class="hero-label" style="margin-top:10px;">Contact</div>
+        <div>📍 Dublin, Ireland</div>
+        <div>📞 +353 899 762 565</div>
+        <div>📧 <a href="mailto:fernamber96@gmail.com">fernamber96@gmail.com</a></div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Selected Projects <span class="label">What I’ve built</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <strong>Pizzaiolo – Full-Stack Pizza Ordering App</strong>
+        <small>React · Spring Boot · MongoDB · 2025</small>
+        <p>
+          QR-based restaurant ordering platform where customers can browse the menu,
+          build their basket, and place orders directly from the table.
+          Includes admin tools for managing dishes and viewing orders.
+        </p>
+        <a href="https://github.com/Granades/pizzaiolo-project" target="_blank">
+          View code on GitHub →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>Skills Development – Backend & Algorithms</strong>
+        <small>DSA · SQL · Java</small>
+        <p>
+          Over 500 challenges completed in algorithms, data structures, and backend concepts,
+          reinforcing problem-solving ability and clean, efficient coding practices.
+        </p>
+      </div>
+
+      <div class="card">
+        <strong>Vending Machine – JavaFX</strong>
+        <small>JavaFX · OOP · UI</small>
+        <p>
+          Interactive vending machine simulator with dynamic UI and modular design,
+          focusing on readability, maintainability, and user experience.
+        </p>
+        <a href="https://github.com/Granades/Vending-Machine-JavaFX" target="_blank">
+          View code on GitHub →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>Grade Calculator – JavaFX</strong>
+        <small>JavaFX · Validation · UX</small>
+        <p>
+          GUI application to calculate student grades with input validation and
+          clear visual feedback, built using clean OOP principles.
+        </p>
+        <a href="https://github.com/Granades/Calculator-JavaFX" target="_blank">
+          View code on GitHub →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>SEWA – Academic Software Engineering Project</strong>
+        <small>Java · Agile · SDLC</small>
+        <p>
+          End-to-end software project applying Agile methodology, UML diagrams,
+          implementation, testing, and documentation to deliver a working solution.
+        </p>
+        <a href="https://github.com/Granades/SEWA" target="_blank">
+          View code on GitHub →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>AR Museum Project</strong>
+        <small>AR Concept · Cultural Heritage</small>
+        <p>
+          Designed an augmented reality concept to enhance visitor experience in a museum,
+          integrating digital content with physical collections.
+        </p>
+        <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank">
+          View project details →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>Migration Database – Historical Data Project</strong>
+        <small>SQL · Data Modelling</small>
+        <p>
+          Created a structured database to analyse historical passenger flows between
+          Spain and South America, focusing on data integrity and query performance.
+        </p>
+        <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank">
+          View schema & notes →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / PROFILE -->
+  <section id="experience">
+    <h2>Experience & Profile <span class="label">Early career</span></h2>
+    <div class="grid">
+      <div class="card">
+        <strong>IT & Software Foundations</strong>
+        <p>
+          Experience across academic and portfolio projects that mirror real-world workflows:
+          troubleshooting, user support, documentation, backend APIs, and UI development.
+        </p>
+        <ul>
+          <li>Comfortable working independently or in small teams.</li>
+          <li>Used Git and GitHub for version control and collaboration.</li>
+          <li>Applied Agile-style planning, testing, and iterative improvements.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Strengths</strong>
+        <ul>
+          <li>Clear communication with technical and non-technical stakeholders.</li>
+          <li>Strong analytical mindset from data and research projects.</li>
+          <li>Adaptable, organised, and proactive in learning new tools.</li>
+          <li>Genuine interest in IT Support, infrastructure, and backend engineering.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills <span class="label">Tech stack</span></h2>
+    <div class="skills-list">
+      <span>IT Support · Troubleshooting</span>
+      <span>Windows OS (setup & config)</span>
+      <span>Basic Networking Concepts</span>
+      <span>Office 365 (user-level & admin basics)</span>
+      <span>Java · Spring Boot</span>
+      <span>JavaScript · React</span>
+      <span>HTML · CSS · Tailwind</span>
+      <span>REST API Design</span>
+      <span>MySQL · MongoDB</span>
+      <span>Git & GitHub</span>
+      <span>JUnit (fundamentals)</span>
+      <span>Object-Oriented Programming</span>
+      <span>Agile & Documentation</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact <span class="label">Let’s talk</span></h2>
+    <p class="contact">
+      I am actively seeking opportunities in IT Support, Infrastructure, and Junior Software
+      Engineering roles in Ireland and across the EU.<br />
+      For roles, collaborations, or questions, please contact me at
+      <a href="mailto:fernamber96@gmail.com">fernamber96@gmail.com</a>
+      or via my GitHub profile.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Fernando Bermudo
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
