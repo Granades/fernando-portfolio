@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Fernando Bermudo | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Fernando Bermudo, Computing Science graduate focusing on IT Support, infrastructure, and software engineering projects." />
+  <meta name="description" content="Portfolio of Fernando Bermudo, IT Support Engineer & Computing graduate with experience in software development, troubleshooting, and infrastructure." />
   <style>
     :root {
       --bg: #050816;
@@ -33,6 +33,7 @@
       color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -65,6 +66,7 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+
     .logo span {
       color: var(--accent);
     }
@@ -74,12 +76,14 @@
       gap: 18px;
       font-size: 14px;
     }
+
     .nav-links a {
       padding: 6px 10px;
       border-radius: 999px;
       transition: all 0.18s ease;
       color: var(--muted);
     }
+
     .nav-links a:hover {
       background: var(--accent-soft);
       color: var(--accent);
@@ -95,30 +99,47 @@
       gap: 40px;
     }
 
+    /* HERO */
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1.3fr);
       gap: 28px;
       align-items: center;
     }
+
     .hero-title {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 8px;
+      line-height: 1.25;
+      margin-bottom: 6px;
     }
+
     .hero-title span {
       color: var(--accent);
     }
+
     .hero-subtitle {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .hero-text {
       font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight {
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      min-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 1px solid rgba(148,163,253,0.5);
+      padding-right: 4px;
+    }
+
+    .hero-text {
+      font-size: 13px;
       color: var(--text);
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .hero-tags {
@@ -127,6 +148,7 @@
       gap: 8px;
       margin: 16px 0 0;
     }
+
     .tag {
       padding: 6px 10px;
       border-radius: 999px;
@@ -138,7 +160,7 @@
     }
 
     .hero-card {
-      padding: 18px 16px;
+      padding: 16px 14px;
       border-radius: var(--radius);
       background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent),
                   rgba(9,9,20,0.98);
@@ -149,18 +171,21 @@
       gap: 10px;
       font-size: 12px;
     }
+
     .hero-label {
-      font-size: 10px;
+      font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
     }
+
     .links-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 2px;
     }
+
     .pill-link {
       padding: 6px 9px;
       border-radius: 999px;
@@ -169,12 +194,36 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      text-decoration: none;
       color: var(--accent);
     }
+
     .pill-link span.icon {
       font-size: 12px;
     }
+
+    .avatar {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      border: 2px solid rgba(56,189,248,0.6);
+      object-fit: cover;
+      background: #020817;
+    }
+
+    .avatar-text {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Sections */
 
     section {
       display: flex;
@@ -191,6 +240,7 @@
       color: var(--accent);
       margin: 0;
     }
+
     h2 span.label {
       font-size: 9px;
       text-transform: uppercase;
@@ -239,6 +289,7 @@
       font-size: 11px;
       color: var(--muted);
     }
+
     .skills-list span {
       padding: 5px 8px;
       border-radius: 8px;
@@ -293,23 +344,27 @@
   <section class="hero" id="about">
     <div>
       <div class="hero-title">
-        IT & Software Engineer<br><span>Portfolio</span>
+        Hi, I'm Fernando Bermudo<span>.</span><br />
+        <span>IT Support & Junior Software Engineer</span>
       </div>
       <div class="hero-subtitle">
-        Computing Science graduate | IT Support & Full-Stack Projects | Based in Ireland
+        Detail-oriented Computing graduate based in Dublin, combining hands-on IT support,
+        software development, and strong documentation skills.
       </div>
+      <div class="hero-highlight" id="typing"></div>
       <p class="hero-text">
-        I enjoy solving real problems with technology: from building production-like
-        full-stack applications to supporting users, debugging systems, and improving
-        workflows. I am focusing my career on IT Support, infrastructure, and backend
-        development roles where I can be hands-on, learn fast, and contribute from day one.
+        I have experience supporting users, troubleshooting systems, configuring environments,
+        and building full-stack applications using Java, Spring Boot, React, and databases.
+        With a multidisciplinary background and a focus on reliability, clarity, and learning,
+        I aim to contribute to IT Support, infrastructure, and software engineering teams
+        that value ownership, good practices, and real impact.
       </p>
       <div class="hero-tags">
-        <span class="tag">IT Support & Helpdesk</span>
+        <span class="tag">IT Support & Troubleshooting</span>
         <span class="tag">Java & Spring Boot</span>
-        <span class="tag">React & Web Development</span>
+        <span class="tag">React & Web Apps</span>
         <span class="tag">MySQL & MongoDB</span>
-        <span class="tag">Problem Solving</span>
+        <span class="tag">Incident & Problem Management</span>
       </div>
     </div>
 
@@ -319,29 +374,54 @@
         <a class="pill-link" href="https://github.com/Granades" target="_blank">
           <span class="icon">★</span><span>GitHub</span>
         </a>
-        <!-- Add LinkedIn or others when ready -->
+        <a class="pill-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank">
+          <span class="icon">💼</span><span>LinkedIn</span>
+        </a>
+        
       </div>
+
+      <div class="avatar">
+        <img class="avatar-img" src="profile.png" alt="FB Logo" />
+        <div class="avatar-text">
+          IT-focused, documentation-driven, and always aiming to leave systems
+          clearer, faster, and more stable than I found them.
+        </div>
+      </div>
+
       <div>
-        <div class="hero-label" style="margin-top:10px;">Contact</div>
+        <div class="hero-label" style="margin-top:8px;">Contact</div>
         <div>📍 Dublin, Ireland</div>
-        <div>📞 +353 899 762 565</div>
-        <div>📧 <a href="mailto:fernamber96@gmail.com">fernamber96@gmail.com</a></div>
+        <div>📞 +353 89 976 2565</div>
+        <div>📧 <a href="mailto:fernanber96@gmail.com">fernanber96@gmail.com</a></div>
       </div>
     </aside>
   </section>
 
+  <!-- ABOUT -->
+  <section>
+    <h2>About Me <span class="label">Profile</span></h2>
+    <p class="hero-text">
+      I am an IT graduate with a strong interest in support engineering, system reliability,
+      and backend development. I bring experience from academic and real-world projects where
+      I have configured systems, debugged issues, improved performance, and worked closely
+      with users and stakeholders. My background in research and documentation helps me
+      communicate clearly, structure information, and follow through on issues until they
+      are fully resolved.
+    </p>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects">
-    <h2>Selected Projects <span class="label">What I’ve built</span></h2>
+    <h2>Selected Projects <span class="label">Hands-on work</span></h2>
     <div class="grid">
 
       <div class="card">
         <strong>Pizzaiolo – Full-Stack Pizza Ordering App</strong>
-        <small>React · Spring Boot · MongoDB · 2025</small>
+        <small>React · Spring Boot · MongoDB · REST APIs</small>
         <p>
-          QR-based restaurant ordering platform where customers can browse the menu,
-          build their basket, and place orders directly from the table.
-          Includes admin tools for managing dishes and viewing orders.
+          QR-based ordering system where customers can view the menu, manage their basket,
+          and place orders. Includes an admin area for dish and order management, simulating
+          real-world restaurant workflows.
         </p>
         <a href="https://github.com/Granades/pizzaiolo-project" target="_blank">
           View code on GitHub →
@@ -350,10 +430,10 @@
 
       <div class="card">
         <strong>Skills Development – Backend & Algorithms</strong>
-        <small>DSA · SQL · Java</small>
+        <small>Java · SQL · Problem Solving</small>
         <p>
-          Over 500 challenges completed in algorithms, data structures, and backend concepts,
-          reinforcing problem-solving ability and clean, efficient coding practices.
+          Continuous practice with algorithms, data structures, database queries, and backend
+          logic to strengthen core engineering fundamentals and structured thinking.
         </p>
       </div>
 
@@ -361,8 +441,8 @@
         <strong>Vending Machine – JavaFX</strong>
         <small>JavaFX · OOP · UI</small>
         <p>
-          Interactive vending machine simulator with dynamic UI and modular design,
-          focusing on readability, maintainability, and user experience.
+          Desktop application simulating a vending machine with clean object-oriented design,
+          clear UI, and focus on reusability and error handling.
         </p>
         <a href="https://github.com/Granades/Vending-Machine-JavaFX" target="_blank">
           View code on GitHub →
@@ -371,10 +451,10 @@
 
       <div class="card">
         <strong>Grade Calculator – JavaFX</strong>
-        <small>JavaFX · Validation · UX</small>
+        <small>JavaFX · Validation</small>
         <p>
-          GUI application to calculate student grades with input validation and
-          clear visual feedback, built using clean OOP principles.
+          Tool to calculate grades with validation and responsive interface, built to model
+          real-world academic workflows.
         </p>
         <a href="https://github.com/Granades/Calculator-JavaFX" target="_blank">
           View code on GitHub →
@@ -382,11 +462,11 @@
       </div>
 
       <div class="card">
-        <strong>SEWA – Academic Software Engineering Project</strong>
-        <small>Java · Agile · SDLC</small>
+        <strong>SEWA – Software Engineering Project</strong>
+        <small>Java · SDLC · Agile Practices</small>
         <p>
-          End-to-end software project applying Agile methodology, UML diagrams,
-          implementation, testing, and documentation to deliver a working solution.
+          Academic software engineering project covering requirements, UML design, implementation,
+          testing, and documentation, following structured development practices.
         </p>
         <a href="https://github.com/Granades/SEWA" target="_blank">
           View code on GitHub →
@@ -394,11 +474,11 @@
       </div>
 
       <div class="card">
-        <strong>AR Museum Project</strong>
-        <small>AR Concept · Cultural Heritage</small>
+        <strong>AR Museum Experience</strong>
+        <small>AR Concept · User Experience</small>
         <p>
-          Designed an augmented reality concept to enhance visitor experience in a museum,
-          integrating digital content with physical collections.
+          Augmented reality concept designed for an educational museum environment to improve
+          visitor engagement and storytelling through interactive digital content.
         </p>
         <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank">
           View project details →
@@ -406,11 +486,11 @@
       </div>
 
       <div class="card">
-        <strong>Migration Database – Historical Data Project</strong>
+        <strong>Migration Database – Historical Data</strong>
         <small>SQL · Data Modelling</small>
         <p>
-          Created a structured database to analyse historical passenger flows between
-          Spain and South America, focusing on data integrity and query performance.
+          Normalised database for analysing historical migration data between Spain and
+          South America, focusing on data integrity, schema design, and query efficiency.
         </p>
         <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank">
           View schema & notes →
@@ -420,29 +500,26 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE / PROFILE -->
+  <!-- EXPERIENCE SUMMARY -->
   <section id="experience">
-    <h2>Experience & Profile <span class="label">Early career</span></h2>
+    <h2>Experience & Approach <span class="label">How I work</span></h2>
     <div class="grid">
       <div class="card">
-        <strong>IT & Software Foundations</strong>
-        <p>
-          Experience across academic and portfolio projects that mirror real-world workflows:
-          troubleshooting, user support, documentation, backend APIs, and UI development.
-        </p>
+        <strong>Technical Foundation</strong>
         <ul>
-          <li>Comfortable working independently or in small teams.</li>
-          <li>Used Git and GitHub for version control and collaboration.</li>
-          <li>Applied Agile-style planning, testing, and iterative improvements.</li>
+          <li>Experience with Windows and Linux environments.</li>
+          <li>Working with REST APIs, CRUD operations, and databases.</li>
+          <li>Building and debugging full-stack applications.</li>
+          <li>Exposure to ITIL-style support, incident handling, and documentation.</li>
         </ul>
       </div>
       <div class="card">
-        <strong>Strengths</strong>
+        <strong>Professional Mindset</strong>
         <ul>
-          <li>Clear communication with technical and non-technical stakeholders.</li>
-          <li>Strong analytical mindset from data and research projects.</li>
-          <li>Adaptable, organised, and proactive in learning new tools.</li>
-          <li>Genuine interest in IT Support, infrastructure, and backend engineering.</li>
+          <li>Calm under pressure and methodical when troubleshooting.</li>
+          <li>Clear communication with both technical and non-technical users.</li>
+          <li>Proactive learner with strong ownership and attention to detail.</li>
+          <li>Motivated to grow in IT Support, infrastructure, and backend engineering roles.</li>
         </ul>
       </div>
     </div>
@@ -452,19 +529,19 @@
   <section id="skills">
     <h2>Skills <span class="label">Tech stack</span></h2>
     <div class="skills-list">
-      <span>IT Support · Troubleshooting</span>
-      <span>Windows OS (setup & config)</span>
-      <span>Basic Networking Concepts</span>
-      <span>Office 365 (user-level & admin basics)</span>
+      <span>IT Support & Troubleshooting</span>
+      <span>Windows 10/11 · Linux (Ubuntu)</span>
+      <span>Networking (TCP/IP, DHCP, DNS, VPN)</span>
+      <span>MySQL · MongoDB Atlas · MS Access</span>
       <span>Java · Spring Boot</span>
-      <span>JavaScript · React</span>
-      <span>HTML · CSS · Tailwind</span>
-      <span>REST API Design</span>
-      <span>MySQL · MongoDB</span>
+      <span>JavaScript · Node.js · Express</span>
+      <span>React (Vite + Axios)</span>
+      <span>REST APIs · CRUD · MVC</span>
       <span>Git & GitHub</span>
-      <span>JUnit (fundamentals)</span>
-      <span>Object-Oriented Programming</span>
-      <span>Agile & Documentation</span>
+      <span>Bash & scripting basics</span>
+      <span>JUnit · Manual & basic automated testing</span>
+      <span>Incident & Problem Management concepts</span>
+      <span>Documentation & Technical Writing</span>
     </div>
   </section>
 
@@ -472,10 +549,10 @@
   <section id="contact">
     <h2>Contact <span class="label">Let’s talk</span></h2>
     <p class="contact">
-      I am actively seeking opportunities in IT Support, Infrastructure, and Junior Software
-      Engineering roles in Ireland and across the EU.<br />
-      For roles, collaborations, or questions, please contact me at
-      <a href="mailto:fernamber96@gmail.com">fernamber96@gmail.com</a>
+      I am open to opportunities in IT Support, Infrastructure, and Junior Software Engineering
+      roles in Ireland and across the EU.<br />
+      For roles, collaborations, or questions, feel free to reach me at
+      <a href="mailto:fernanber96@gmail.com">fernanber96@gmail.com</a>
       or via my GitHub profile.
     </p>
   </section>
@@ -486,7 +563,44 @@
 </footer>
 
 <script>
+  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Soft typing effect for highlight text
+  const phrases = [
+    "Focused on reliable, well-documented solutions.",
+    "Combining IT support, backend, and real-world projects.",
+    "Bringing structure, clarity, and ownership to every task."
+  ];
+  let i = 0, j = 0, current = "", isDeleting = false;
+  const el = document.getElementById("typing");
+
+  function type() {
+    const full = phrases[i];
+
+    if (!isDeleting) {
+      current = full.substring(0, j + 1);
+      j++;
+      if (j === full.length) {
+        isDeleting = true;
+        el.textContent = current;
+        setTimeout(type, 1000);
+        return;
+      }
+    } else {
+      current = full.substring(0, j - 1);
+      j--;
+      if (j === 0) {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+    }
+
+    el.textContent = current;
+    setTimeout(type, isDeleting ? 40 : 60);
+  }
+
+  if (el) type();
 </script>
 </body>
 </html>
