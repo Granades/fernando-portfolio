@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of Fernando Bermudo, Java and Kotlin backend developer focused on Spring Boot, REST APIs, databases, Android, and Python-based AI integrations."
+    content="Portfolio of Fernando Bermudo, Java and Kotlin backend developer focused on Spring Boot, REST APIs, PostgreSQL, automation, AI/RAG integrations, Android, and full-stack systems."
   />
   <style>
     :root {
@@ -35,7 +35,10 @@
     body {
       margin: 0;
       font-family: var(--font);
-      background: radial-gradient(circle at top, #111827 0, #020817 60%);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.14), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(16, 185, 129, 0.1), transparent 26%),
+        linear-gradient(180deg, #07111f 0%, #020817 55%, #050816 100%);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
     }
@@ -246,6 +249,19 @@
       background: var(--accent-soft);
     }
 
+    .action-link.primary {
+      color: #06111f;
+      background: linear-gradient(135deg, #38bdf8, #34d399);
+      border-color: rgba(125, 211, 252, 0.8);
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.18);
+    }
+
+    .action-link.primary:hover {
+      color: #06111f;
+      filter: brightness(1.06);
+    }
+
     .profile-row {
       display: flex;
       gap: 10px;
@@ -260,6 +276,15 @@
       object-fit: cover;
       border: 2px solid rgba(56, 189, 248, 0.5);
       background: #020817;
+    }
+
+    .profile-fallback {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 800;
+      color: #07111f;
+      background: linear-gradient(135deg, #38bdf8, #34d399);
     }
 
     .profile-text {
@@ -294,6 +319,29 @@
       border: 1px solid rgba(56, 189, 248, 0.32);
     }
 
+    .feature-card:first-child {
+      grid-column: span 3;
+      background:
+        linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(52, 211, 153, 0.08)),
+        var(--card);
+    }
+
+    .project-badge {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fef3c7;
+      background: rgba(245, 158, 11, 0.13);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
     .card-title {
       margin: 0;
       font-size: 17px;
@@ -303,6 +351,7 @@
     .card-meta {
       font-size: 12px;
       color: var(--muted);
+      line-height: 1.55;
     }
 
     .card-text {
@@ -391,6 +440,10 @@
         grid-template-columns: 1fr;
       }
 
+      .feature-card:first-child {
+        grid-column: auto;
+      }
+
       .stack-layout {
         grid-template-columns: 1fr;
       }
@@ -425,7 +478,7 @@
   <header>
     <div class="nav">
       <div class="logo">Fernando <span>Bermudo</span></div>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#stack">Tech Stack</a>
@@ -435,40 +488,40 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero" id="about">
       <div>
         <h1 class="hero-title">
           Hi, I'm Fernando Bermudo.<br />
-          <span class="accent">Java & Kotlin Backend Developer</span>
+          <span class="accent">Java &amp; Kotlin Backend Developer</span>
         </h1>
         <div class="hero-subtitle">
-          Spring Boot · REST APIs · Databases · Android · Python AI Integrations
+          Spring Boot &middot; REST APIs &middot; Databases &middot; Android &middot; Python AI Integrations
         </div>
         <div class="hero-highlight" id="typing"></div>
         <p class="hero-summary">
-          I build backend services and full-stack applications with Java, Kotlin, Spring Boot, MongoDB, and SQL, with a strong focus on clean architecture, maintainability, testing, and reliable system behaviour. I also work on Android projects in Kotlin and Python-based services with FastAPI, including AI-oriented integrations such as RAG workflows and LLM-connected applications.
+          I build backend services and full-stack applications with Java, Kotlin, Spring Boot, PostgreSQL, MongoDB, and SQL, with a strong focus on clean architecture, maintainability, testing, and reliable system behaviour. I also work on Android projects in Kotlin and Python-based services with FastAPI, including AI-oriented integrations such as RAG workflows and LLM-connected applications.
         </p>
 
         <div class="hero-pills">
-          <span class="pill">Java · Kotlin</span>
-          <span class="pill">Spring Boot · REST APIs</span>
-          <span class="pill">MongoDB · SQL · JUnit</span>
-          <span class="pill">Android · MVVM</span>
-          <span class="pill">Python · FastAPI · RAG</span>
-          <span class="pill">Cloud-Oriented Development · Azurite</span>
+          <span class="pill">Java &middot; Kotlin</span>
+          <span class="pill">Spring Boot &middot; REST APIs</span>
+          <span class="pill">PostgreSQL &middot; MongoDB &middot; SQL</span>
+          <span class="pill">Android &middot; MVVM</span>
+          <span class="pill">Python &middot; FastAPI &middot; RAG</span>
+          <span class="pill">TypeScript &middot; VPS Automation</span>
         </div>
       </div>
 
       <aside class="hero-card">
-        <div class="meta-label">Links & Profiles</div>
+        <div class="meta-label">Links &amp; Profiles</div>
         <div class="links-row">
-          <a class="action-link" href="https://github.com/Granades" target="_blank" rel="noopener noreferrer">★ GitHub</a>
-          <a class="action-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+          <a class="action-link primary" href="https://www.flightsdublin.ie/" target="_blank" rel="noopener noreferrer">&#9733; FlightsDublin</a>
+          <a class="action-link" href="https://github.com/Granades" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="action-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
 
         <div class="profile-row">
-          <img class="profile-img" src="profile.png" alt="Fernando Bermudo profile" />
+          <div class="profile-img profile-fallback" aria-label="Fernando Bermudo initials">FB</div>
           <div class="profile-text">
             Backend developer focused on Java, Kotlin, Spring Boot, APIs, databases, and practical software design, with additional experience in Android and Python-based AI integrations.
           </div>
@@ -476,74 +529,86 @@
 
         <div class="meta-label">Contact</div>
         <div class="contact-list">
-          <div>📍 Dublin, Ireland</div>
-          <div>📧 <a href="mailto:contact@granades.dev">contact@granades.dev</a></div>
-          <div>🌐 <a href="https://granades.dev" target="_blank" rel="noopener noreferrer">granades.dev</a></div>
+          <div>Dublin, Ireland</div>
+          <div><a href="mailto:contact@granades.dev">contact@granades.dev</a></div>
+          <div><a href="https://granades.dev" target="_blank" rel="noopener noreferrer">granades.dev</a></div>
         </div>
 
-        <a class="action-link" href="mailto:contact@granades.dev">✉️ Email Me</a>
+        <a class="action-link" href="mailto:contact@granades.dev">Email Me</a>
       </aside>
     </section>
 
-    <!-- FEATURED PROJECTS -->
     <section id="projects">
-      <h2>Featured Projects <span class="section-label">Backend & systems</span></h2>
+      <h2>Featured Projects <span class="section-label">Backend &amp; systems</span></h2>
 
       <div class="feature-grid">
         <article class="feature-card">
-          <h3 class="card-title">Pizzaiolo – Full-Stack Ordering System</h3>
-          <div class="card-meta">Java · Spring Boot · React · MongoDB · REST APIs</div>
+          <div class="project-badge">&#9733; Main Project</div>
+          <h3 class="card-title">&#9733; FlightsDublin - AI-Powered Flight Discovery Platform</h3>
+          <div class="card-meta">
+            Java &middot; Spring Boot &middot; PostgreSQL &middot; Python &middot; FastAPI &middot; React &middot; TypeScript &middot; VPS Automation &middot; RAG &middot; OpenAI
+          </div>
+          <p class="card-text">
+            Full-stack travel discovery platform that collects live flight offers from Dublin, stores and normalises fare data in PostgreSQL, and uses an AI assistant with RAG-style retrieval to recommend trips by mood, dates, destination type, weather, events, and price. The system includes a separate ingestion pipeline running on a VPS, a Spring Boot API, a React frontend, and an assistant service deployed online.
+          </p>
+          <div class="card-links">
+            <a href="https://www.flightsdublin.ie/" target="_blank" rel="noopener noreferrer">www.flightsdublin.ie &rarr;</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3 class="card-title">Pizzaiolo - Full-Stack Ordering System</h3>
+          <div class="card-meta">Java &middot; Spring Boot &middot; React &middot; MongoDB &middot; REST APIs</div>
           <p class="card-text">
             Full-stack restaurant ordering platform with REST APIs, authentication, and database integration. Designed with layered backend architecture to simulate real-world restaurant workflows and user-facing order flows.
           </p>
           <div class="card-links">
-            <a href="https://github.com/Granades/pizzaiolo-project" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://github.com/Granades/pizzaiolo-project" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
           </div>
         </article>
 
         <article class="feature-card">
-          <h3 class="card-title">Ragnarok MVP Tracker – Real-Time System</h3>
-          <div class="card-meta">Python · Discord API · MongoDB · Automation</div>
+          <h3 class="card-title">Ragnarok MVP Tracker - Real-Time System</h3>
+          <div class="card-meta">Python &middot; Discord API &middot; MongoDB &middot; Automation</div>
           <p class="card-text">
             Real-time tracking and notification system that records boss kills, calculates respawn timers, tracks tomb locations, and sends Discord alerts to improve coordination through persistent state management and time-based logic.
           </p>
           <div class="card-links">
-            <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
           </div>
         </article>
 
         <article class="feature-card">
-          <h3 class="card-title">Housing Inequality in Ireland – ML Analysis</h3>
-          <div class="card-meta">Python · Pandas · Scikit-learn · K-Means</div>
+          <h3 class="card-title">Housing Inequality in Ireland - ML Analysis</h3>
+          <div class="card-meta">Python &middot; Pandas &middot; Scikit-learn &middot; K-Means</div>
           <p class="card-text">
-            Machine learning project analysing Census 2022 data across roughly 19,000 areas in Ireland. Uses K-Means clustering to uncover territorial socio-economic patterns beyond traditional urban–rural classifications.
+            Machine learning project analysing Census 2022 data across roughly 19,000 areas in Ireland. Uses K-Means clustering to uncover territorial socio-economic patterns beyond traditional urban-rural classifications.
           </p>
           <div class="card-links">
-            <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- OTHER PROJECTS -->
     <section>
       <h2>Other Projects <span class="section-label">Additional work</span></h2>
 
       <div class="other-grid">
         <article class="card">
-          <h3 class="card-title">SEWA – Software Engineering Project</h3>
-          <div class="card-meta">Java · SDLC · Agile Practices</div>
+          <h3 class="card-title">SEWA - Software Engineering Project</h3>
+          <div class="card-meta">Java &middot; SDLC &middot; Agile Practices</div>
           <p class="card-text">
             Academic software engineering project covering requirements, UML design, implementation, testing, and documentation using a structured SDLC approach.
           </p>
           <div class="card-links">
-            <a href="https://github.com/Granades/SEWA" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://github.com/Granades/SEWA" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
           </div>
         </article>
 
         <article class="card">
           <h3 class="card-title">Android Applications</h3>
-          <div class="card-meta">Kotlin · Android · MVVM · API Integration</div>
+          <div class="card-meta">Kotlin &middot; Android &middot; MVVM &middot; API Integration</div>
           <p class="card-text">
             Small Android projects demonstrating Kotlin development, Android architecture fundamentals, UI handling, state management, and API-driven mobile interactions.
           </p>
@@ -553,30 +618,29 @@
         </article>
 
         <article class="card">
-          <h3 class="card-title">Migration Database – Historical Data</h3>
-          <div class="card-meta">SQL · Data Modelling</div>
+          <h3 class="card-title">Migration Database - Historical Data</h3>
+          <div class="card-meta">SQL &middot; Data Modelling</div>
           <p class="card-text">
             Normalised database project focused on historical migration data, schema design, data integrity, and query efficiency.
           </p>
           <div class="card-links">
-            <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank" rel="noopener noreferrer">Details →</a>
+            <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank" rel="noopener noreferrer">Details &rarr;</a>
           </div>
         </article>
 
         <article class="card">
           <h3 class="card-title">AR Museum Experience</h3>
-          <div class="card-meta">Android · AR Concept · UX</div>
+          <div class="card-meta">Android &middot; AR Concept &middot; UX</div>
           <p class="card-text">
             Concept project for an educational museum environment, designed to improve storytelling and visitor engagement through interactive mobile experiences.
           </p>
           <div class="card-links">
-            <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank" rel="noopener noreferrer">Details →</a>
+            <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank" rel="noopener noreferrer">Details &rarr;</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- TECH STACK -->
     <section id="stack">
       <h2>Tech Stack <span class="section-label">What I work with</span></h2>
 
@@ -589,10 +653,12 @@
             <span>Spring Boot</span>
             <span>REST APIs</span>
             <span>SQL</span>
+            <span>PostgreSQL</span>
             <span>MongoDB</span>
             <span>JUnit</span>
+            <span>Data Ingestion Pipelines</span>
             <span>OOP</span>
-            <span>Architecture & Maintainability</span>
+            <span>Architecture &amp; Maintainability</span>
           </div>
         </div>
 
@@ -616,6 +682,8 @@
             <span>Pandas</span>
             <span>Scikit-learn</span>
             <span>RAG</span>
+            <span>pgvector</span>
+            <span>OpenAI API</span>
             <span>LLM Integration</span>
           </div>
         </div>
@@ -624,9 +692,11 @@
           <h3 class="stack-title">Other</h3>
           <div class="stack-tags">
             <span>React</span>
-            <span>Git & GitHub</span>
+            <span>TypeScript</span>
+            <span>Git &amp; GitHub</span>
             <span>Agile</span>
             <span>Debugging</span>
+            <span>VPS Automation</span>
             <span>Cloud-Oriented Development</span>
             <span>Azurite</span>
           </div>
@@ -634,11 +704,10 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
-      <h2>Contact <span class="section-label">Let’s talk</span></h2>
+      <h2>Contact <span class="section-label">Let's talk</span></h2>
       <p class="contact-text">
-        I’m currently open to junior and graduate opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Java Developer</strong>, or <strong>Kotlin Developer</strong> in Ireland and across the EU.
+        I'm currently open to junior and graduate opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Java Developer</strong>, or <strong>Kotlin Developer</strong> in Ireland and across the EU.
         <br />
         For job opportunities, collaborations, or technical discussions, feel free to reach me at
         <a href="mailto:contact@granades.dev">contact@granades.dev</a>.
@@ -647,13 +716,14 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Fernando Bermudo
+    &copy; <span id="year"></span> Fernando Bermudo
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const phrases = [
+      "Building AI-powered travel systems with Spring Boot, PostgreSQL, FastAPI, and RAG.",
       "Building Java & Kotlin backend services with Spring Boot.",
       "Designing REST APIs, databases, and maintainable systems.",
       "Developing Android apps and Python-based AI integrations.",
